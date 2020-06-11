@@ -12,6 +12,7 @@ namespace CretaceousClient.Controllers
   {
     public IActionResult Index()
     {
+      Console.WriteLine("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Hey I am in index places Controller");
       var allPlaces = Place.GetPlaces();
       return View(allPlaces);
     }

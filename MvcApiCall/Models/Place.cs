@@ -16,14 +16,23 @@ namespace MvcApiCall.Models
       public int Rating { get; set; }
       public string ImageUrl { get; set; }
       
+
+      
       public static List<Place> GetPlaces()
       {
+        Console.WriteLine("|||||||||||||||||||||||||||||||||||||||||||||||||||||||Hey i am in GetPlaces of Plcaes.cs");
         var apiCallTask = ApiHelper.GetAll();
         var result = apiCallTask.Result;
+        if(result == null)
+        {
+          Console.WriteLine("|||||||||||||||||||||||||||||||||||||||||||||||||Wow got null in getplaces");
+        }
+          Console.WriteLine("|||||||||||||||||||||||||||||||||||||||||||||||||Wow didn't get null");
+        
 
-        JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-        List<Place> placeList = JsonConvert.DeserializeObject<List<Place>>(jsonResponse["results"].ToString());
-
+        JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+        List<Place> placeList = JsonConvert.DeserializeObject<List<Place>>(jsonResponse.ToString());
+        Console.WriteLine($"|||||||||||||||||||||||||||||||||||||||||||||||{placeList[0].City}");
         return placeList;
       }
 

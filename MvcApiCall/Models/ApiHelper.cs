@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using RestSharp;
+using System;
 
 namespace MvcApiCall.Models
 {
@@ -7,9 +8,10 @@ namespace MvcApiCall.Models
   {
     public static async Task<string> GetAll()
     {
-      RestClient client = new RestClient("http://localhost:5004/api");
+      RestClient client = new RestClient("http://localhost:5004/api/");
       RestRequest request = new RestRequest($"places", Method.GET);
       var response = await client.ExecuteTaskAsync(request);
+      Console.WriteLine($"||||||||||||||||||||||||||| here api helper center {response.Content}");
       return response.Content;
     }
 
