@@ -3,18 +3,23 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">All Articles</h1>
-    <ol>
-    @foreach (Article article in Model)
-    {
-        <ul>
-            <li>Section: @article.Section</li>
-            <li>Title: @article.Title</li>
-            <li>Abstract: @article.Abstract)</li>
-            <li>Url: @article.Url)</li>
-            <li>Byline: @article.Byline)</li>
-        </ul>
-        <br>
-    }
-    </ol>
+    <h1 class="display-4">All Places</h1>
+<ol>
+@foreach (Place place in Model)
+{
+    <ul>
+        <li>ID: @place.PlaceId</li>
+        <li>CityName: @place.City</li>
+        <li>Name of the Country: @place.Country</li>
+        <li>Description: @place.Description</li>
+        <li>Rating the visitor awarded: @place.Rating</li>
+        <li>See the picture: @place.ImageUrl</li>
+    </ul>
+    <a href="/Places/Details/@(place.PlaceId)"><p>View Details</p></a>
+    <br>
+}
+</ol>
 </div>
+
+
+
