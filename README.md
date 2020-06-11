@@ -4,12 +4,13 @@
 
 ## _Description_
 
-Website is work in Progress. It is supposed to execute GET, PUT, POST and DELETE methods for other websites for their API's
+This website successfully pings other website hosting api's. This website was used in conjuction with other of our website that hosted api data thru DB about places visited. This website was successful in getting the data from the other hosting web API.
 
 
 ## _Setup/Installation Requirements_ 
-Set up would be discussed later Tomorrow
-``` 
+1- dotnet run would automatically bring up a page that lists all the places visited and a form to add new place. But the other website should already be functioning on local host that is different than this one.
+2- Fill the form hit enter and update the page and you'll see the new place added to the list.
+ 
 
 
 ## _Technology Used_
@@ -23,10 +24,8 @@ Set up would be discussed later Tomorrow
 
 ## _Specs_
 
-|Behavior|Input|Output|
-|-----|-----|-----|
-Specs would be updated tomorrow.
-
+1- dotnet run would automatically bring up a page that lists all the places visited and a form to add new place. But the other website should already be functioning on local host that is different than this one.
+2- Fill the form hit enter and update the page and you'll see the new place added to the list.
 
 ## _Legal_
 
