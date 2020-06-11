@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>New Place:</h1>
+
+<form action="/places" method="post">
+  <label for="city">Place's Name</label>
+  <input id="city" name="city" type="text">
+  <label for="description">City Name</label>
+  <input id="description" name="description" type="text">
+  <label for="rating">Give Rating for your visit</label>
+  <input id="rating" name="rating" type="number">
+  <label for="country">Country's Name</label>
+  <input id="country" name="country" type="text">
+  <label for="imageUrl">Url of a picture</label>
+  <input id="imageUrl" name="imageUrl" type="text">
+  <button type="submit">Go!</button>
+</form>
+
+<h1>All Places:</h1>
+
+<ol>
+@foreach (Place place in Model)
+{
+    <ul>
+        <li>ID: @place.PlaceId</li>
+        <li>City: @place.City</li>
+        <li>Country: @place.Country</li>
+        <li>Description of the place: @place.Description</li>
+        <li>Rating: @place.Rating</li>
+        <li>SnapShot of the place: @place.ImageUrl</li>
+    </ul>
+    <a href="/Places/Details/@(place.PlaceId)"><p>View Details</p></a>
+    <br>
+}
+</ol>
